@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modern Mini Store</title>
-  <meta name="description" content="Lightweight modern storefront." />
-  <style>/* inlined minimal CSS for tiny size */
+  <title>JLM Wholesale</title>
+  <meta name="description" content="JLM Wholesale - Affordable wholesale solutions for your business." />
+  <style>
     :root{--bg:#0b0c10;--card:#121420;--text:#e8e8ef;--muted:#a3a3b0;--brand:#7c5cff;--accent:#ffd166;--border:#202536}
     *{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
     body{background:linear-gradient(155deg,#0c0e18,#0a1020 60%,#061a2a);color:var(--text)}
     .wrap{max-width:980px;margin:0 auto;padding:16px}
     header{position:sticky;top:0;background:rgba(13,16,28,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
     .nav{display:flex;align-items:center;gap:10px;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:20px;color:var(--accent)}
     .actions{display:flex;gap:8px;align-items:center}
     input[type=search]{width:240px;max-width:40vw;padding:8px 10px;background:#0f1220;border:1px solid var(--border);border-radius:10px;color:var(--text)}
     .btn{padding:9px 12px;border-radius:12px;border:1px solid var(--border);background:#0f1220;color:var(--text);cursor:pointer}
     .btn.primary{background:linear-gradient(135deg,var(--brand),#00b3ff);border:none}
     .pill{margin-left:6px;background:var(--accent);color:#111;font-weight:800;border-radius:999px;padding:0 8px}
     .hero{display:grid;gap:14px;grid-template-columns:1.2fr .8fr;align-items:center;padding:28px 0}
-    .hero h1{margin:0;font-size:36px;line-height:1.05}
-    .hero p{margin:0;color:var(--muted)}
+    .hero h1{margin:0;font-size:38px;line-height:1.05;color:var(--accent)}
+    .hero p{margin:0;color:var(--muted);font-size:18px}
     .cta{display:flex;gap:10px;margin-top:12px}
     .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin:14px 0 24px}
     @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
@@ -31,7 +31,7 @@
     .value{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
     .v{border:1px dashed var(--border);border-radius:12px;padding:12px;color:var(--muted)}
     footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:14px;margin-top:18px}
-    /* drawer */ .drawer{position:fixed;inset:0;display:none}.drawer.show{display:block}
+    .drawer{position:fixed;inset:0;display:none}.drawer.show{display:block}
     .shade{position:absolute;inset:0;background:rgba(0,0,0,.5)} .panel{position:absolute;right:0;top:0;height:100%;width:min(92vw,380px);background:#0f1220;border-left:1px solid var(--border);display:grid;grid-template-rows:auto 1fr auto}
     .phead{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--border)}
     .pbody{overflow:auto;padding:10px}.pline{display:grid;grid-template-columns:56px 1fr auto;gap:8px;align-items:center;border:1px solid var(--border);border-radius:10px;padding:8px;margin-bottom:8px}
@@ -44,7 +44,7 @@
 <body>
   <header>
     <div class="wrap nav">
-      <div class="brand">Modern Mini Store</div>
+      <div class="brand">JLM Wholesale</div>
       <div class="actions">
         <input id="q" type="search" placeholder="Search…" aria-label="Search products">
         <button id="cartBtn" class="btn">Cart <span id="count" class="pill">0</span></button>
@@ -54,37 +54,34 @@
 
   <section class="wrap hero">
     <div>
-      <h1>Modern look. Tiny download.</h1>
-      <p>A lightweight storefront you can upload to Vercel in seconds. Edit products in <code>script.js</code>.</p>
+      <h1>Wholesale Solutions for Your Business</h1>
+      <p>At JLM Wholesale, we provide affordable, reliable, and modern wholesale products to keep your business moving forward.</p>
       <div class="cta">
-        <a href="#catalog" class="btn primary">Shop Catalog</a>
-        <a href="#contact" class="btn">Contact</a>
+        <a href="#catalog" class="btn primary">Browse Products</a>
+        <a href="#contact" class="btn">Contact Us</a>
       </div>
     </div>
     <div>
       <div class="value">
-        <div class="v">⚡ Fast — pure HTML/CSS/JS</div>
-        <div class="v">🛒 Cart with localStorage</div>
-        <div class="v">🎨 Clean, responsive UI</div>
+        <div class="v">📦 Bulk Orders Available</div>
+        <div class="v">🚚 Fast Shipping</div>
+        <div class="v">🤝 Trusted Wholesale Partner</div>
       </div>
     </div>
   </section>
 
   <main class="wrap" id="catalog">
+    <h2>Featured Products</h2>
     <div class="grid" id="grid"></div>
   </main>
 
-  <section class="wrap value">
-    <div class="v">Need real checkout? I can add Stripe with one small API later.</div>
-    <div class="v">Deploy via Vercel: Import → Upload → drag this folder.</div>
-  </section>
-
   <section class="wrap" id="contact">
-    <h2>Contact</h2>
-    <p>Email <a href="mailto:sales@example.com">sales@example.com</a></p>
+    <h2>Contact JLM Wholesale</h2>
+    <p>📞 Phone: <a href="tel:5857107772">585-710-7772</a></p>
+    <p>✉️ Email: <a href="mailto:Jlmwholesale369@gmail.com">Jlmwholesale369@gmail.com</a></p>
   </section>
 
-  <footer>© <span id="year"></span> Mini Store</footer>
+  <footer>© <span id="year"></span> JLM Wholesale — Call us at 585-710-7772 | Email: Jlmwholesale369@gmail.com</footer>
 
   <!-- Cart Drawer -->
   <div id="drawer" class="drawer">

@@ -1,11 +1,8 @@
-// Tiny catalog with external images (keeps zip size small)
 const PRODUCTS = [
-  {id:"p1", title:"Wireless Headphones", price:49.99, img:"https://picsum.photos/seed/phones/600/400"},
-  {id:"p2", title:"Desk Organizer", price:24.00, img:"https://picsum.photos/seed/desk/600/400"},
-  {id:"p3", title:"Scented Candle", price:18.50, img:"https://picsum.photos/seed/candle/600/400"},
-  {id:"p4", title:"Face Serum", price:32.00, img:"https://picsum.photos/seed/serum/600/400"},
-  {id:"p5", title:"Smart Plug (2‑Pack)", price:19.99, img:"https://picsum.photos/seed/plug/600/400"},
-  {id:"p6", title:"Office Chair", price:149.00, img:"https://picsum.photos/seed/chair/600/400"}
+  {id:"p1", title:"Bulk Headphones", price:499.00, img:"https://picsum.photos/seed/headphones/600/400"},
+  {id:"p2", title:"Wholesale Office Chairs", price:2200.00, img:"https://picsum.photos/seed/chair/600/400"},
+  {id:"p3", title:"Smart Gadgets (Box of 50)", price:1500.00, img:"https://picsum.photos/seed/gadgets/600/400"},
+  {id:"p4", title:"LED Light Strips (Case)", price:750.00, img:"https://picsum.photos/seed/lights/600/400"}
 ];
 
 const $ = (s,el=document)=>el.querySelector(s);
@@ -34,7 +31,7 @@ function renderProducts(){
     grid.appendChild(card);
   }
   $$('[data-add]').forEach(b => b.onclick = ()=>add(b.dataset.add));
-  $$('[data-det]').forEach(b => b.onclick = ()=>alert('Details coming soon.'));
+  $$('[data-det]').forEach(b => b.onclick = ()=>alert('More details coming soon.'));
 }
 
 function add(id){ state.cart[id]=(state.cart[id]||0)+1; save(); openCart(); renderCart(); }
