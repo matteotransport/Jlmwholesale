@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Mini Store</title>
+  <meta name="description" content="Lightweight modern storefront." />
+  <style>/* inlined minimal CSS for tiny size */
+    :root{--bg:#0b0c10;--card:#121420;--text:#e8e8ef;--muted:#a3a3b0;--brand:#7c5cff;--accent:#ffd166;--border:#202536}
+    *{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    body{background:linear-gradient(155deg,#0c0e18,#0a1020 60%,#061a2a);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;background:rgba(13,16,28,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
+    .nav{display:flex;align-items:center;gap:10px;justify-content:space-between}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
+    .actions{display:flex;gap:8px;align-items:center}
+    input[type=search]{width:240px;max-width:40vw;padding:8px 10px;background:#0f1220;border:1px solid var(--border);border-radius:10px;color:var(--text)}
+    .btn{padding:9px 12px;border-radius:12px;border:1px solid var(--border);background:#0f1220;color:var(--text);cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#00b3ff);border:none}
+    .pill{margin-left:6px;background:var(--accent);color:#111;font-weight:800;border-radius:999px;padding:0 8px}
+    .hero{display:grid;gap:14px;grid-template-columns:1.2fr .8fr;align-items:center;padding:28px 0}
+    .hero h1{margin:0;font-size:36px;line-height:1.05}
+    .hero p{margin:0;color:var(--muted)}
+    .cta{display:flex;gap:10px;margin-top:12px}
+    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin:14px 0 24px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{border:1px solid var(--border);background:linear-gradient(180deg,var(--card),rgba(255,255,255,.02));border-radius:16px;overflow:hidden}
+    .img{height:180px;background:#0d0f1a} .img img{width:100%;height:100%;object-fit:cover;display:block}
+    .body{padding:12px}.title{font-weight:700}.price{color:var(--accent);font-weight:800;margin:6px 0 10px}
+    .row{display:flex;gap:8px}
+    .value{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .v{border:1px dashed var(--border);border-radius:12px;padding:12px;color:var(--muted)}
+    footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:14px;margin-top:18px}
+    /* drawer */ .drawer{position:fixed;inset:0;display:none}.drawer.show{display:block}
+    .shade{position:absolute;inset:0;background:rgba(0,0,0,.5)} .panel{position:absolute;right:0;top:0;height:100%;width:min(92vw,380px);background:#0f1220;border-left:1px solid var(--border);display:grid;grid-template-rows:auto 1fr auto}
+    .phead{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--border)}
+    .pbody{overflow:auto;padding:10px}.pline{display:grid;grid-template-columns:56px 1fr auto;gap:8px;align-items:center;border:1px solid var(--border);border-radius:10px;padding:8px;margin-bottom:8px}
+    .pline img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+    .qty{display:flex;gap:6px;align-items:center;margin-top:4px}
+    .qty button{width:26px;height:26px;border-radius:8px;border:1px solid var(--border);background:#0f1220;color:var(--text)}
+    .pfoot{padding:10px 12px;border-top:1px solid var(--border)} .sub{display:flex;justify-content:space-between;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Modern Mini Store</div>
+      <div class="actions">
+        <input id="q" type="search" placeholder="Search…" aria-label="Search products">
+        <button id="cartBtn" class="btn">Cart <span id="count" class="pill">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="wrap hero">
+    <div>
+      <h1>Modern look. Tiny download.</h1>
+      <p>A lightweight storefront you can upload to Vercel in seconds. Edit products in <code>script.js</code>.</p>
+      <div class="cta">
+        <a href="#catalog" class="btn primary">Shop Catalog</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+    <div>
+      <div class="value">
+        <div class="v">⚡ Fast — pure HTML/CSS/JS</div>
+        <div class="v">🛒 Cart with localStorage</div>
+        <div class="v">🎨 Clean, responsive UI</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap" id="catalog">
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <section class="wrap value">
+    <div class="v">Need real checkout? I can add Stripe with one small API later.</div>
+    <div class="v">Deploy via Vercel: Import → Upload → drag this folder.</div>
+  </section>
+
+  <section class="wrap" id="contact">
+    <h2>Contact</h2>
+    <p>Email <a href="mailto:sales@example.com">sales@example.com</a></p>
+  </section>
+
+  <footer>© <span id="year"></span> Mini Store</footer>
+
+  <!-- Cart Drawer -->
+  <div id="drawer" class="drawer">
+    <div class="shade" id="shade"></div>
+    <aside class="panel">
+      <div class="phead"><strong>Your Cart</strong><button id="close" class="btn">Close</button></div>
+      <div class="pbody" id="lines"></div>
+      <div class="pfoot">
+        <div class="sub">Subtotal <strong id="subtotal">$0.00</strong></div>
+        <button id="checkout" class="btn primary" style="width:100%">Checkout</button>
+        <button id="clear" class="btn" style="width:100%;margin-top:6px">Clear</button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
