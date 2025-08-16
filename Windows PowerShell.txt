@@ -1,0 +1,452 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\Ayadh> @echo off
+At line:1 char:7
++ @echo off
++       ~~~
+Unexpected token 'off' in expression or statement.
+At line:1 char:1
++ @echo off
++ ~~~~~
+The splatting operator '@' cannot be used to reference variables in an expression. '@echo' can be used only as an
+argument to a command. To reference variables in an expression use '$echo'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Ayadh> setlocal
+setlocal : The term 'setlocal' is not recognized as the name of a cmdlet, function, script file, or operable program.
+Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ setlocal
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (setlocal:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> set NAME=jlm-wholesale-llc
+PS C:\Users\Ayadh> set OUT=%USERPROFILE%\Desktop\%NAME%
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: Create project folder
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: Create project folder
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> mkdir "%OUT%"
+
+
+    Directory: C:\Users\Ayadh
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         8/16/2025   1:19 AM                %OUT%
+
+
+PS C:\Users\Ayadh> cd /d "%OUT%"
+Set-Location : A positional parameter cannot be found that accepts argument '%OUT%'.
+At line:1 char:1
++ cd /d "%OUT%"
++ ~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: Init vite project
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: Init vite project
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> call npx create-vite@latest . -- --template react
+call : The term 'call' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ call npx create-vite@latest . -- --template react
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (call:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> call npm install
+call : The term 'call' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ call npm install
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (call:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> call npm install framer-motion stripe
+call : The term 'call' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ call npm install framer-motion stripe
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (call:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> call npm install -D tailwindcss postcss autoprefixer vite
+call : The term 'call' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ call npm install -D tailwindcss postcss autoprefixer vite
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (call:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> call npx tailwindcss init -p
+call : The term 'call' is not recognized as the name of a cmdlet, function, script file, or operable program. Check
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ call npx tailwindcss init -p
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (call:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: Tailwind config
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: Tailwind config
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >tailwind.config.js echo /** @type {import('tailwindcss').Config} */^
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >tailwind.config.js echo /** @type {import('tailwindcss').Config} */^
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo export default {^
+>> & echo   content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],^
+>> & echo   theme: { extend: {} },^
+>> & echo   plugins: [],^
+>> & echo };
+export
+default
+^
+& echo   content: ["./index.html","./src/**/*.{js,jsx,ts,tsx}"],^
+& echo   theme: { extend: {} },^
+& echo   plugins: [],^
+& echo
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: PostCSS config
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: PostCSS config
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >postcss.config.js echo export default { plugins: { tailwindcss: {}, autoprefixer: {} } }
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >postcss.config.js echo export default { plugins: { tailwindcss: {},  ...
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: index.html
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: index.html
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >index.html echo ^<!doctype html^>^
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >index.html echo ^<!doctype html^>^
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo ^<html lang="en"^>^
+^<html
+lang=en^>^
+PS C:\Users\Ayadh> & echo ^<head^><meta charset="UTF-8"/^><meta name="viewport" content="width=device-width, initial-scale=1.0"/^><title>JLM Wholesale LLC^</title^>^</head^>^
+^<head^><meta
+charset=UTF-8/^><meta
+name=viewport
+content=width=device-width, initial-scale=1.0/^><title>JLM
+Wholesale
+LLC^</title^>^</head^>^
+PS C:\Users\Ayadh> & echo ^<body class="bg-neutral-50"^><div id="root"></div><script type="module" src="/src/main.jsx"></script>^</body^>^
+^<body
+class=bg-neutral-50^><div
+id=root></div><script
+type=module
+src=/src/main.jsx></script>^</body^>^
+PS C:\Users\Ayadh> & echo ^</html^>
+^</html^>
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: CSS
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: CSS
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> mkdir src public 2>nul
+out-file : FileStream was asked to open a device that was not a file. For support for devices like 'com1:' or 'lpt1:',
+call CreateFile, then use the FileStream constructors that take an OS handle as an IntPtr.
+At line:1 char:1
++ mkdir src public 2>nul
++ ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [Out-File], NotSupportedException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+PS C:\Users\Ayadh> >src\index.css echo @tailwind base;@tailwind components;@tailwind utilities;html,body,#root{height:100%%}
+>>
+At line:1 char:46
++ >src\index.css echo @tailwind base;@tailwind components;@tailwind uti ...
++                                              ~~~~~~~~~~
+Unexpected token 'components' in expression or statement.
+At line:1 char:67
++ ...  echo @tailwind base;@tailwind components;@tailwind utilities;html,bo ...
++                                                         ~~~~~~~~~
+Unexpected token 'utilities' in expression or statement.
+At line:1 char:81
++ ... @tailwind base;@tailwind components;@tailwind utilities;html,body,#ro ...
++                                                                 ~
+Missing argument in parameter list.
+At line:1 char:87
++ ... wind base;@tailwind components;@tailwind utilities;html,body,#root{he ...
++                                                                  ~
+Missing expression after ',' in pipeline element.
+At line:1 char:36
++ >src\index.css echo @tailwind base;@tailwind components;@tailwind uti ...
++                                    ~~~~~~~~~
+The splatting operator '@' cannot be used to reference variables in an expression. '@tailwind' can be used only as an
+argument to a command. To reference variables in an expression use '$tailwind'.
+At line:1 char:57
++ ... \index.css echo @tailwind base;@tailwind components;@tailwind utiliti ...
++                                                         ~~~~~~~~~
+The splatting operator '@' cannot be used to reference variables in an expression. '@tailwind' can be used only as an
+argument to a command. To reference variables in an expression use '$tailwind'.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Ayadh> :: main.jsx
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: main.jsx
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >src\main.jsx echo import React from "react";^
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >src\main.jsx echo import React from "react";^
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+^ : The term '^' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:46
++ >src\main.jsx echo import React from "react";^
++                                              ~
+    + CategoryInfo          : ObjectNotFound: (^:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo import ReactDOM from "react-dom/client";^
+import
+ReactDOM
+from
+react-dom/client
+^ : The term '^' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:48
++ & echo import ReactDOM from "react-dom/client";^
++                                                ~
+    + CategoryInfo          : ObjectNotFound: (^:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo import App from "./App.jsx";^
+import
+App
+from
+./App.jsx
+^ : The term '^' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:36
++ & echo import App from "./App.jsx";^
++                                    ~
+    + CategoryInfo          : ObjectNotFound: (^:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo import "./index.css";^
+import
+./index.css
+^ : The term '^' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:29
++ & echo import "./index.css";^
++                             ~
+    + CategoryInfo          : ObjectNotFound: (^:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> & echo ReactDOM.createRoot(document.getElementById("root")).render(^<React.StrictMode^>^<App/^>^</React.StrictMode^>);
+At line:1 char:68
++ ...  ReactDOM.createRoot(document.getElementById("root")).render(^<React. ...
++                                                                  ~
+Missing ')' in method call.
+At line:1 char:117
++ ... d("root")).render(^<React.StrictMode^>^<App/^>^</React.StrictMode^>);
++                                                                        ~
+Unexpected token ')' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingEndParenthesisInMethodCall
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: App.jsx (you will paste full code manually here)
+you : The term 'you' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:13
++ :: App.jsx (you will paste full code manually here)
++             ~~~
+    + CategoryInfo          : ObjectNotFound: (you:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >src\App.jsx echo // TODO: Paste full App.jsx code from ChatGPT
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >src\App.jsx echo // TODO: Paste full App.jsx code from ChatGPT
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: API function
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: API function
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> mkdir api
+
+
+    Directory: C:\Users\Ayadh
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----         8/16/2025   1:20 AM                api
+
+
+PS C:\Users\Ayadh> >api\create-checkout-session.js echo // Stripe Checkout API
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ >api\create-checkout-session.js echo // Stripe Checkout API
++ ~
+    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: vercel.json
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: vercel.json
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >vercel.json echo { "functions": { "api/*.js": { "runtime": "nodejs18.x" } }, "rewrites": [ { "source": "/api/(.*)", "destination": "/api/$1" }, { "source": "/(.*)", "destination": "/" } ] }
+At line:1 char:32
++ >vercel.json echo { "functions": { "api/*.js": { "runtime": "nodejs18 ...
++                                ~
+Unexpected token ':' in expression or statement.
+At line:1 char:46
++ >vercel.json echo { "functions": { "api/*.js": { "runtime": "nodejs18 ...
++                                              ~
+Unexpected token ':' in expression or statement.
+At line:1 char:59
++ >vercel.json echo { "functions": { "api/*.js": { "runtime": "nodejs18 ...
++                                                           ~
+Unexpected token ':' in expression or statement.
+At line:1 char:103
++ ... js": { "runtime": "nodejs18.x" } }, "rewrites": [ { "source": "/api/( ...
++                                                                 ~
+Unexpected token ':' in expression or statement.
+At line:1 char:156
++ ... source": "/api/(.*)", "destination": "/api/$1" }, { "source": "/(.*)" ...
++                                                                 ~
+Unexpected token ':' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> :: env example
+:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ :: env example
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> >.env.example echo STRIPE_SECRET_KEY=sk_test_your_key_here
+> : The term '>' is not recognized as the name of a cmdlet, function, script file, or operable program. Check thespelling of the name, or if a path was included, verify that the path is correct and try again.At line:1 char:1+ >.env.example echo STRIPE_SECRET_KEY=sk_test_your_key_here+ ~    + CategoryInfo          : ObjectNotFound: (>:String) [], CommandNotFoundException    + FullyQualifiedErrorId : CommandNotFoundExceptionPS C:\Users\Ayadh>PS C:\Users\Ayadh> :: Zip folder:: : The term '::' is not recognized as the name of a cmdlet, function, script file, or operable program. Check thespelling of the name, or if a path was included, verify that the path is correct and try again.At line:1 char:1
++ :: Zip folder
++ ~~
+    + CategoryInfo          : ObjectNotFound: (:::String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\Ayadh> cd /d "%USERPROFILE%\Desktop"
+Set-Location : A positional parameter cannot be found that accepts argument '%USERPROFILE%\Desktop'.
+At line:1 char:1
++ cd /d "%USERPROFILE%\Desktop"
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Location], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+
+PS C:\Users\Ayadh> powershell -command "Compress-Archive -Path '%NAME%' -DestinationPath '%NAME%.zip' -Force"
+Compress-Archive : The path '%NAME%' either does not exist or is not a valid file system path.
+At line:1 char:1
++ Compress-Archive -Path '%NAME%' -DestinationPath '%NAME%.zip' -Force
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (%NAME%:String) [Compress-Archive], InvalidOperationException
+    + FullyQualifiedErrorId : ArchiveCmdletPathNotFound,Compress-Archive
+
+PS C:\Users\Ayadh>
+PS C:\Users\Ayadh> echo ✅ Done! Find %NAME%.zip on your Desktop
+✅
+Done!
+Find
+%NAME%.zip
+on
+your
+Desktop
+PS C:\Users\Ayadh> pause
+Press Enter to continue...:
