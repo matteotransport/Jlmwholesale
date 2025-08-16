@@ -1,102 +1,55 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JLM Wholesale</title>
-  <meta name="description" content="JLM Wholesale - Affordable wholesale solutions for your business." />
-  <style>
-    :root{--bg:#0b0c10;--card:#121420;--text:#e8e8ef;--muted:#a3a3b0;--brand:#7c5cff;--accent:#ffd166;--border:#202536}
-    *{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    body{background:linear-gradient(155deg,#0c0e18,#0a1020 60%,#061a2a);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:16px}
-    header{position:sticky;top:0;background:rgba(13,16,28,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:10}
-    .nav{display:flex;align-items:center;gap:10px;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:20px;color:var(--accent)}
-    .actions{display:flex;gap:8px;align-items:center}
-    input[type=search]{width:240px;max-width:40vw;padding:8px 10px;background:#0f1220;border:1px solid var(--border);border-radius:10px;color:var(--text)}
-    .btn{padding:9px 12px;border-radius:12px;border:1px solid var(--border);background:#0f1220;color:var(--text);cursor:pointer}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),#00b3ff);border:none}
-    .pill{margin-left:6px;background:var(--accent);color:#111;font-weight:800;border-radius:999px;padding:0 8px}
-    .hero{display:grid;gap:14px;grid-template-columns:1.2fr .8fr;align-items:center;padding:28px 0}
-    .hero h1{margin:0;font-size:38px;line-height:1.05;color:var(--accent)}
-    .hero p{margin:0;color:var(--muted);font-size:18px}
-    .cta{display:flex;gap:10px;margin-top:12px}
-    .grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px;margin:14px 0 24px}
-    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}@media(min-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
-    .card{border:1px solid var(--border);background:linear-gradient(180deg,var(--card),rgba(255,255,255,.02));border-radius:16px;overflow:hidden}
-    .img{height:180px;background:#0d0f1a} .img img{width:100%;height:100%;object-fit:cover;display:block}
-    .body{padding:12px}.title{font-weight:700}.price{color:var(--accent);font-weight:800;margin:6px 0 10px}
-    .row{display:flex;gap:8px}
-    .value{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .v{border:1px dashed var(--border);border-radius:12px;padding:12px;color:var(--muted)}
-    footer{border-top:1px solid var(--border);color:var(--muted);text-align:center;padding:14px;margin-top:18px}
-    .drawer{position:fixed;inset:0;display:none}.drawer.show{display:block}
-    .shade{position:absolute;inset:0;background:rgba(0,0,0,.5)} .panel{position:absolute;right:0;top:0;height:100%;width:min(92vw,380px);background:#0f1220;border-left:1px solid var(--border);display:grid;grid-template-rows:auto 1fr auto}
-    .phead{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--border)}
-    .pbody{overflow:auto;padding:10px}.pline{display:grid;grid-template-columns:56px 1fr auto;gap:8px;align-items:center;border:1px solid var(--border);border-radius:10px;padding:8px;margin-bottom:8px}
-    .pline img{width:56px;height:56px;object-fit:cover;border-radius:8px}
-    .qty{display:flex;gap:6px;align-items:center;margin-top:4px}
-    .qty button{width:26px;height:26px;border-radius:8px;border:1px solid var(--border);background:#0f1220;color:var(--text)}
-    .pfoot{padding:10px 12px;border-top:1px solid var(--border)} .sub{display:flex;justify-content:space-between;margin-bottom:8px}
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">JLM Wholesale</div>
-      <div class="actions">
-        <input id="q" type="search" placeholder="Search…" aria-label="Search products">
-        <button id="cartBtn" class="btn">Cart <span id="count" class="pill">0</span></button>
-      </div>
-    </div>
-  </header>
-
-  <section class="wrap hero">
-    <div>
-      <h1>Wholesale Solutions for Your Business</h1>
-      <p>At JLM Wholesale, we provide affordable, reliable, and modern wholesale products to keep your business moving forward.</p>
-      <div class="cta">
-        <a href="#catalog" class="btn primary">Browse Products</a>
-        <a href="#contact" class="btn">Contact Us</a>
-      </div>
-    </div>
-    <div>
-      <div class="value">
-        <div class="v">📦 Bulk Orders Available</div>
-        <div class="v">🚚 Fast Shipping</div>
-        <div class="v">🤝 Trusted Wholesale Partner</div>
-      </div>
-    </div>
-  </section>
-
-  <main class="wrap" id="catalog">
-    <h2>Featured Products</h2>
-    <div class="grid" id="grid"></div>
-  </main>
-
-  <section class="wrap" id="contact">
-    <h2>Contact JLM Wholesale</h2>
-    <p>📞 Phone: <a href="tel:5857107772">585-710-7772</a></p>
-    <p>✉️ Email: <a href="mailto:Jlmwholesale369@gmail.com">Jlmwholesale369@gmail.com</a></p>
-  </section>
-
-  <footer>© <span id="year"></span> JLM Wholesale — Call us at 585-710-7772 | Email: Jlmwholesale369@gmail.com</footer>
-
-  <!-- Cart Drawer -->
-  <div id="drawer" class="drawer">
-    <div class="shade" id="shade"></div>
-    <aside class="panel">
-      <div class="phead"><strong>Your Cart</strong><button id="close" class="btn">Close</button></div>
-      <div class="pbody" id="lines"></div>
-      <div class="pfoot">
-        <div class="sub">Subtotal <strong id="subtotal">$0.00</strong></div>
-        <button id="checkout" class="btn primary" style="width:100%">Checkout</button>
-        <button id="clear" class="btn" style="width:100%;margin-top:6px">Clear</button>
-      </div>
-    </aside>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JLM Wholesale — Wholesale Solutions</title>
+<meta name="description" content="JLM Wholesale — friendly wholesale solutions with great prices, fast shipping, and personal service.">
+<style>
+:root{--bg:#fffdf8;--ink:#0f172a;--muted:#475569;--brand:#f59e0b;--brand2:#f97316;--line:#efe7dc}
+*{box-sizing:border-box}html,body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;background:var(--bg);color:var(--ink)}
+.container{max-width:960px;margin:0 auto;padding:0 16px}
+.header{position:sticky;top:0;background:rgba(255,253,248,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:900;letter-spacing:.2px}
+.tag{font-size:12px;color:var(--muted);margin-top:-4px}
+.btn{display:inline-block;padding:10px 14px;border-radius:14px;border:1px solid var(--line);background:#fff;text-decoration:none;color:var(--ink)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:none}
+.hero{padding:42px 0}
+h1{margin:0 0 8px;font-size:38px;line-height:1.05}
+p.lead{margin:0 0 16px;color:var(--muted)}
+.info{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.section{padding:18px 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}
+.footer{border-top:1px solid var(--line);padding:12px 0;text-align:center;color:#64748b;font-size:14px}
+</style>
+</head><body>
+<header class="header"><div class="container">
+  <div class="row">
+    <div><div class="brand">JLM Wholesale</div><div class="tag">Quality • Value • Friendly Service</div></div>
+    <div class="actions"><a class="btn" href="#contact">Contact</a></div>
   </div>
+</div></header>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<main>
+  <section class="hero"><div class="container">
+    <h1>Wholesale solutions for your business.</h1>
+    <p class="lead">Fast shipping, transparent pricing, and a team that treats you like a partner. Let’s stock your shelves with confidence.</p>
+    <div class="cta"><a class="btn primary" href="mailto:Jlmwholesale369@gmail.com?subject=Wholesale Inquiry">Email Us</a> <a class="btn" href="tel:5857107772">Call 585‑710‑7772</a></div>
+    <div class="info" style="margin-top:12px"><span>🛡️ Reliable</span><span>🚚 2–5 day shipping</span><span>💬 Real support</span></div>
+  </div></section>
+
+  <section class="section"><div class="container grid">
+    <div class="card"><strong>Why choose JLM?</strong><p style="margin:6px 0 0;color:#475569">Clear wholesale terms, curated essentials, and quick turnaround. We keep it simple so your customers keep coming back.</p></div>
+    <div class="card"><strong>What’s next?</strong><p style="margin:6px 0 0;color:#475569">Tell us what you need. We’ll confirm pricing and delivery windows the same day.</p></div>
+  </div></section>
+
+  <section id="contact" class="section"><div class="container">
+    <h2 style="margin:0 0 8px">Contact</h2>
+    <p style="margin:0 0 8px;color:#475569">📞 <a href="tel:5857107772">585‑710‑7772</a> &nbsp; • &nbsp; ✉️ <a href="mailto:Jlmwholesale369@gmail.com">Jlmwholesale369@gmail.com</a></p>
+    <a class="btn primary" href="mailto:Jlmwholesale369@gmail.com?subject=Wholesale Inquiry">Start an Order</a>
+  </div></section>
+</main>
+
+<footer class="footer"><div class="container">© <span id="y"></span> JLM Wholesale</div></footer>
+<script>document.getElementById('y').textContent=(new Date).getFullYear()</script>
+</body></html>
